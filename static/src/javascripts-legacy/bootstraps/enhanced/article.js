@@ -13,6 +13,7 @@ define([
     'common/modules/experiments/ab',
     'common/modules/onward/geo-most-popular',
     'common/modules/atoms/quiz',
+    'common/modules/atoms/readers-questions',
     'bootstraps/enhanced/article-liveblog-common',
     'bootstraps/enhanced/trail',
     'ophan/ng'
@@ -30,6 +31,7 @@ define([
     ab,
     geoMostPopular,
     quiz,
+    readersQuestions,
     articleLiveblogCommon,
     trail,
     ophan
@@ -73,6 +75,7 @@ define([
         openModule.init();
         mediator.emit('page:article:ready');
         quiz.handleCompletion();
+        readersQuestions.init();
     };
 
     return {

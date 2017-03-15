@@ -15,7 +15,7 @@ class HostedTrailsTest extends FlatSpec with Matchers {
     val interactives = None
     val recipes = None
     val reviews = None
-    val storyQuestions = None
+    val storyquestions = None
     val cta = Some(
       Seq(
         new Atom {
@@ -23,7 +23,7 @@ class HostedTrailsTest extends FlatSpec with Matchers {
           val atomType = AtomType.Cta
           val labels = Nil
           val defaultHtml = ""
-          val title = ""
+          val title = None
           val data: AtomData = AtomData.Cta(
             new CTAAtom {
               val url = ""

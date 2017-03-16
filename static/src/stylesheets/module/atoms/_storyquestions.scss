@@ -64,8 +64,8 @@
     margin-bottom: $gs-baseline;
 
     @include mq($from: tablet) {
-        max-width: 80%;
         @include fs-headline(3);
+        max-width: 80%;
         font-weight: 900;
     }
 

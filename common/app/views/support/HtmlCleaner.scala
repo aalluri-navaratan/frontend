@@ -532,7 +532,7 @@ case class ImmersiveHeaders(isImmersive: Boolean) extends HtmlCleaner {
   }
 }
 
-case class DropCaps(isFeature: Boolean, isImmersive: Boolean) extends HtmlCleaner {
+case class DropCaps(isFeature: Boolean, isImmersive: Boolean, isRecipeArticle: Boolean) extends HtmlCleaner {
   private def setDropCap(p: Element): String = {
     p.html.replaceFirst(
       "^([\"'“‘]*[a-zA-Z])(.{199,})",
@@ -541,7 +541,7 @@ case class DropCaps(isFeature: Boolean, isImmersive: Boolean) extends HtmlCleane
   }
 
   override def clean(document: Document): Document = {
-    if(isFeature) {
+    if(isFeature && !isRecipeArticle) {
       val children = document.body().children().toList
       children.headOption match {
         case Some(p) =>
